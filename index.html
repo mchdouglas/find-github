@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Find Github</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <style>
+    table {
+      margin-top: 20px;
+    }
+    img {
+      width: 17%;
+      border-radius: 50%;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="app">
+   <div class="bordered striped centered">
+    <input type="text" placeholder="Digite o usrname do github" v-model="user">
+    <button @click="carregarDados">Buscar</button>
+   </div>
+    <table class="bordered striped centered" v-if="informations != false">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Local</th>
+        </tr>
+        <img :src="avatar" alt="">
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{informations.name}}</td>
+          <td>{{informations.location}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        informations: [],
+        user: '',
+        avatar:''
+      },
+      methods: {
+        async carregarDados() {
+          const urlApi = `https://api.github.com/users/${this.user}`
+          this.informations = await fetch(urlApi).then(res => res.json())
+          this.avatar = this.informations.avatar_url
+          console.log(this.informations)
+        }
+      },
+      watch:{
+          user: function() {
+              this.avatar = ""
+              this.informations = ""
+          }
+        }
+    })
+  </script>
+</body>
+
+</html>
