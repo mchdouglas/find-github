@@ -8,4 +8,4 @@ Consumindo API do github com Vue.JS
 ## Clone o repositório 
 `git clone <URL_deste_repositório>`
 ## Próximo Passo
-Depois de você clonar o repositório acesse a pasta e localize o arquivo index.html basta abri-lo com seu navegador web e tudo já devera estar funcionando!!
+Depois de você clonar o repositório acesse a pasta e localize o arquivo index.html basta abri-lo com seu navegador web e tudo já deverá estar funcionando!!
