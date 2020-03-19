@@ -10,4 +10,4 @@ Consumindo API do github com Vue.JS
 ## Próximo Passo
 Depois de você clonar o repositório acesse a pasta e localize o arquivo index.html basta abri-lo com seu navegador web e tudo já deverá estar funcionando!!
 
-/home/michaeldev/Imagens/print-find-github/inicial.png
+![Alt Text](https://github.com/{user}/{repo}/raw/{branch}/path/to/image.gif)
