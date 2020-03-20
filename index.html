@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="shortcut icon" href="./assets/icon.png">
   <title>Find Github</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
@@ -55,7 +56,6 @@
           const urlApi = `https://api.github.com/users/${this.user}`
           this.informations = await fetch(urlApi).then(res => res.json())
           this.avatar = this.informations.avatar_url
-          console.log(this.informations)
         }
       },
       watch:{
